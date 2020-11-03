@@ -73,9 +73,14 @@ const Tweet = (props) => {
                   tw="no-underline mb-1 mr-4"
                 >
                   <img
-                    src={props.retweeted_status.user.profile_image_url_https}
+                    data-src={
+                      props.retweeted_status.user.profile_image_url_https
+                    }
                     tw="w-10 rounded-full"
                     alt="avatar"
+                    className="lazyload"
+                    width="40"
+                    height="40"
                   />
                 </a>
                 <h4 tw="pb-2 m-0 mr-auto leading-none">
@@ -148,9 +153,12 @@ const Tweet = (props) => {
                   tw="no-underline mb-1 mr-4"
                 >
                   <img
-                    src={props.user.profile_image_url_https}
+                    data-src={props.user.profile_image_url_https}
                     tw="w-10 rounded-full"
                     alt="avatar"
+                    className="lazyload"
+                    height="40"
+                    width="40"
                   />
                 </a>
                 <h4 tw="pb-2 m-0 mr-auto leading-none">
@@ -225,7 +233,9 @@ const Tweet = (props) => {
             <img
               tw="max-w-full border border-solid border-gray-300 rounded-lg"
               alt="twitter image"
-              src={props.entities.media[0].media_url_https}
+              data-src={props.entities.media[0].media_url_https}
+              className="lazyload"
+              width="510"
             />
           </a>
         )}
@@ -238,16 +248,14 @@ const Tweet = (props) => {
           `}
           tw="text-sm mt-4"
         >
-          <a
-            href={`https://www.twitter.com/${props.user.screen_name}/status/${props.id}`}
-          >
-            {!props.embedded && (
-              <Fragment>
-                {d.toLocaleTimeString([], { timeStyle: "short" })} ·{" "}
-                {d.toLocaleDateString([], { dateStyle: "medium" })}
-              </Fragment>
-            )}
-          </a>
+          {!props.embedded && (
+            <a
+              href={`https://www.twitter.com/${props.user.screen_name}/status/${props.id}`}
+            >
+              {d.toLocaleTimeString([], { timeStyle: "short" })} ·{" "}
+              {d.toLocaleDateString([], { dateStyle: "medium" })}
+            </a>
+          )}
         </footer>
       </div>
     </article>

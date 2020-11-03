@@ -1,16 +1,21 @@
 {
-  "name": "cjtf-twitter",
-  "short_name": "cjtf-twitter",
+  "name": "CJTF_NJ Tweets",
+  "short_name": "CJTF_NJ Tweets",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
-  "theme_color": "#673ab8",
+  "theme_color": "#ef8234",
   "icons": [
     {
-      "src": "/assets/icon.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "https://pbs.twimg.com/profile_images/1285643055840792577/gvLk5dsu_normal.jpg",
+      "type": "image/jpg",
+      "sizes": "48x48"
+    },
+    {
+      "src": "https://pbs.twimg.com/profile_images/1285643055840792577/gvLk5dsu_200x200.jpg",
+      "type": "image/jpg",
+      "sizes": "128x128"
     }
   ]
 }

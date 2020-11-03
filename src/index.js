@@ -1,8 +1,7 @@
 import { render } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import { darkTheme, defaultTheme, ThemeProvider } from "./theme";
-
-import "tailwindcss/dist/base.min.css";
+import "lazysizes";
 
 import Container from "./components/Container";
 
@@ -46,7 +45,7 @@ const App = () => {
     const json = await data.json();
     setTweets(json);
   }, []);
-  console.log({ theme });
+
   return (
     <ThemeProvider value={theme}>
       <Container
@@ -58,4 +57,6 @@ const App = () => {
   );
 };
 
-if (typeof window !== "undefined") render(<App />, document.body);
+if (typeof window !== "undefined") {
+  render(<App />, document.body);
+}
