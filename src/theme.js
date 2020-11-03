@@ -7,7 +7,7 @@ const defaultTheme = {
   heading: "#000",
   subheading: "#678",
   body: "#111",
-  links: "#29d",
+  links: "#27a",
   border: "#eee"
 };
 
@@ -18,7 +18,7 @@ const darkTheme = {
   heading: "#fff",
   subheading: "#89a",
   body: "#fff",
-  links: "#29d",
+  links: "#39e",
   border: "#345"
 };
 const [ThemeProvider, useTheme] = createStrictContext({ name: "Theme" });
