@@ -69,6 +69,7 @@ const Tweet = (props) => {
 
               <header tw="flex items-start">
                 <a
+                  target="_blank"
                   href={`https://www.twitter.com/${props.retweeted_status.user.screen_name}`}
                   tw="no-underline mb-1 mr-4"
                 >
@@ -85,6 +86,7 @@ const Tweet = (props) => {
                 </a>
                 <h4 tw="pb-2 m-0 mr-auto leading-none">
                   <a
+                    target="_blank"
                     href={`https://www.twitter.com/${props.retweeted_status.user.screen_name}`}
                     css={[
                       css`
@@ -149,6 +151,7 @@ const Tweet = (props) => {
           : [
               <header tw="flex items-start">
                 <a
+                  target="_blank"
                   href={`https://www.twitter.com/${props.user.screen_name}`}
                   tw="no-underline mb-1 mr-4"
                 >
@@ -163,6 +166,7 @@ const Tweet = (props) => {
                 </a>
                 <h4 tw="pb-2 m-0 mr-auto leading-none">
                   <a
+                    target="_blank"
                     href={`https://www.twitter.com/${props.user.screen_name}`}
                     css={[
                       css`
@@ -226,6 +230,7 @@ const Tweet = (props) => {
 
         {props.entities.media && props.entities.media.length && (
           <a
+            target="_blank"
             href={`https://www.twitter.com/${props.user.screen_name}/status/${props.id}`}
             rel="noopener"
             tw="block"
@@ -250,6 +255,7 @@ const Tweet = (props) => {
         >
           {!props.embedded && (
             <a
+              target="_blank"
               href={`https://www.twitter.com/${props.user.screen_name}/status/${props.id}`}
             >
               {d.toLocaleTimeString([], { timeStyle: "short" })} ·{" "}
