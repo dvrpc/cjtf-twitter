@@ -33,7 +33,7 @@ const Tweet = (props) => {
 
   return (
     <article
-      key={props.id}
+      key={props.id_str}
       css={css`
         border-color: ${theme.border};
 
@@ -221,7 +221,7 @@ const Tweet = (props) => {
 
         {props.entities.media && props.entities.media.length && (
           <a
-            href={`https://www.twitter.com/${props.user.screen_name}/status/${props.id}`}
+            href={`https://www.twitter.com/${props.user.screen_name}/status/${props.id_str}`}
             rel="noopener"
             tw="block"
           >
@@ -245,7 +245,7 @@ const Tweet = (props) => {
         >
           {!props.embedded && (
             <a
-              href={`https://www.twitter.com/${props.user.screen_name}/status/${props.id}`}
+              href={`https://www.twitter.com/${props.user.screen_name}/status/${props.id_str}`}
             >
               {d.toLocaleTimeString([], { timeStyle: "short" })} ·{" "}
               {d.toLocaleDateString([], { dateStyle: "medium" })}
