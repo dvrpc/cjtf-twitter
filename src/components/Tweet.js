@@ -40,6 +40,11 @@ const Tweet = (props) => {
         &:hover {
           background-color: ${theme.hoverBg};
         }
+
+        a {
+          color: ${theme.links};
+          ${tw`no-underline hover:underline`}
+        }
       `}
       tw="p-8 -mb-px flex-1 flex flex-col border border-solid"
     >
@@ -130,11 +135,6 @@ const Tweet = (props) => {
                 css={[
                   css`
                     color: ${theme.body};
-
-                    a {
-                      color: ${theme.links};
-                      ${tw`no-underline hover:underline`}
-                    }
                   `,
                   tw`py-4`,
                 ]}
@@ -210,11 +210,6 @@ const Tweet = (props) => {
                 css={[
                   css`
                     color: ${theme.body};
-
-                    a {
-                      color: ${theme.links};
-                      ${tw`no-underline hover:underline`}
-                    }
                   `,
                   tw`py-4`,
                 ]}
