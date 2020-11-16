@@ -219,19 +219,39 @@ const Tweet = (props) => {
               />,
             ]}
 
-        {props.entities.media && props.entities.media.length && (
+        {props.extended_entities?.media?.length && (
           <a
             href={`https://www.twitter.com/${props.user.screen_name}/status/${props.id_str}`}
             rel="noopener"
-            tw="block"
+            tw="block border border-solid border-gray-300 rounded-lg flex overflow-hidden h-40"
+            css={css`
+              div:first-of-type {
+                ${tw`rounded-l-lg`}
+              }
+
+              div:last-of-type {
+                ${tw`rounded-r-lg`}
+              }
+            `}
           >
-            <img
-              tw="max-w-full border border-solid border-gray-300 rounded-lg"
-              alt="twitter image"
-              data-src={props.entities.media[0].media_url_https}
-              className="lazyload"
-              width="510"
-            />
+            {props.extended_entities.media.map((media) => (
+              <div
+                tw="border-solid overflow-hidden"
+                css={css`
+                  border-color: ${theme.bg};
+                  width: ${(100 / props.extended_entities.media.length).toFixed(
+                    2
+                  )}%;
+                `}
+              >
+                <img
+                  alt="twitter image"
+                  data-src={`${media.media_url_https}?name=small`}
+                  className="lazyload"
+                  tw="min-h-full max-w-full"
+                />
+              </div>
+            ))}
           </a>
         )}
         {props.quoted_status && (
